@@ -65,7 +65,6 @@ import { mapState, mapWritableState } from 'pinia'
 import useModalStore from '@/stores/modal'
 import AppLoginForm from './LoginForm.vue'
 import AppRegisterForm from './RegisterForm.vue'
-//import { ErrorMessage } from 'vee-validate'
 
 export default {
   name: 'Auth',

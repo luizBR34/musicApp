@@ -5,6 +5,11 @@ export default defineStore('user', {
   state: () => ({
     userLoggedIn: false
   }),
+  getters: {
+    userLoggedState(state) {
+      return state.userLoggedIn
+    }
+  },
   actions: {
     async register(values) {
       const userCred = await auth.createUserWithEmailAndPassword(values.email, values.password)
@@ -26,6 +31,11 @@ export default defineStore('user', {
       await auth.signInWithEmailAndPassword(values.email, values.password)
 
       this.userLoggedIn = true
+    },
+    async signOut() {
+      await auth.signOut()
+
+      this.userLoggedIn = false
     }
   }
 })
