@@ -137,11 +137,11 @@
 </template>
 
 <script>
-import useUserStore from '@/stores/user'
+/* import useUserStore from '@/stores/user' */
 
 export default {
-  name: 'manage',
-  beforeRouteEnter(to, from, next) {
+  name: 'manage'
+  /*   beforeRouteEnter(to, from, next) {
     const store = useUserStore()
 
     //Only permits the user navigates if he is logged in.
@@ -150,6 +150,6 @@ export default {
     } else {
       next({ name: 'home' })
     }
-  }
+  } */
 }
 </script>

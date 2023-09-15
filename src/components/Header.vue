@@ -43,7 +43,6 @@
 import { mapStores, mapState, mapActions, mapWritableState } from 'pinia'
 import useModalStore from '@/stores/modal'
 import useUserStore from '@/stores/user'
-import router from '../router'
 
 export default {
   name: 'AppHeader',
@@ -61,11 +60,14 @@ export default {
     async logOut() {
       try {
         await this.signOut()
+        //Check the property requiresAuth from Meta
+        if (this.$route.meta.requiresAuth) {
+          this.$router.push({ name: 'home' })
+        }
       } catch (error) {
         return
       }
     }
-  },
-  components: { router }
+  }
 }
 </script>
